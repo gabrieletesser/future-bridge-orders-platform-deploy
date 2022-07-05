@@ -225,7 +225,7 @@ export default function Checkout(props) {
                     <Center><Text fontSize='3xl'>Selected package: {pack.title.rendered}</Text></Center>
                     <Center><Text fontSize='3xl'>Price: {pack.discounted_price} €</Text></Center>
                 </VStack>
-                <VStack align="left" w="50%">
+                <VStack align="left" w="100%">
                     <Heading>Billing details</Heading>
                     {
                         invoiceDetailsFields.map((field, i) => {
@@ -267,7 +267,7 @@ export default function Checkout(props) {
                     }
 
                 </VStack>
-                <VStack pt={10} align="left" w="50%">
+                <VStack pt={10} align="left" w="100%">
                     <Heading>Primary Contact</Heading>
                     {/* <Flex minWidth='100%' direction={['column', 'row']} > */}
                     {/* <VStack> */}
@@ -275,12 +275,10 @@ export default function Checkout(props) {
                         personFields.map((field, i) => {
                             return (
                                 <>
-                                    <Container key={i} p={0}>
-                                        <FormControl isRequired={field.mandatory}>
+                                        <FormControl key={i} isRequired={field.mandatory}>
                                             <FormLabel htmlFor={field.name}>{field.label}</FormLabel>
                                             <Input id={`primary_contact_${field.name}`} type='text' />
                                         </FormControl>
-                                    </Container>
                                     {
                                         i + 1 < personFields.length ? <Spacer /> : ""
                                     }
@@ -337,11 +335,11 @@ export default function Checkout(props) {
                         }
                     </VStack>
                 </Flex>
-                <VStack pt={10} align="left" w="50%">
+                <VStack pt={10} align="left" w="100%">
                     <Heading>Notes</Heading>
                     <Textarea id="notes"/>
                 </VStack>
-                <VStack pt={10} align="left" w="80%">
+                <VStack pt={10} align="left" w="100%">
                     <Heading>How did you hear about the event</Heading>
                     <RadioGroup id="other_source" onChange={setOtherSource}>
                         <VStack direction='row' align="left">
@@ -360,7 +358,7 @@ export default function Checkout(props) {
                             ""
                     }
                 </VStack>
-                <Center>
+                <Center pt={4}>
                     <VStack>
                         <Button onClick={makeOrder}>Review and submit</Button>
                         {
