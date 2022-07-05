@@ -1,0 +1,33 @@
+{
+  "name": "future-bridge-orders-platform",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^2.0.2",
+    "@chakra-ui/react": "^2.2.1",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@fontsource/montserrat": "^4.5.11",
+    "@sendgrid/mail": "^7.7.0",
+    "@supabase/supabase-js": "^1.35.4",
+    "crypto-js": "^4.1.1",
+    "framer-motion": "^6.3.13",
+    "next": "12.1.6",
+    "nodejs-base64": "^2.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.4.0",
+    "url-search-params-polyfill": "^8.1.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "8.18.0",
+    "eslint-config-next": "12.1.6"
+  }
+}
