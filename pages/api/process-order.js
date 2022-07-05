@@ -3,7 +3,7 @@ import { supabase } from '../../utils/supabase';
 import { getPaymentUrl } from '../../utils/moneytigo';
 import mail from "@sendgrid/mail";
 
-mail.setApiKey("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")
+mail.setApiKey(process.env.SENDGRID_API_KEY)
 
 export default async function handler(req, res) {
     const { details, url } = JSON.parse(req.body)
