@@ -43,9 +43,9 @@ export default async function handler(req, res) {
         const msg = {
             to: order[0].email, // Change to your recipient
             from: 'info@future-bridge.eu', // Change to your verified sender
-            subject: 'Thank you for purchasing ' + order.purchased_package_name,
+            subject: 'Thank you for purchasing ' + order[0].purchased_package_name,
             text: 'We have registered your order. We will send you confirmation of payment as soon as possible',
-            html: `<h2>Dr. Mr./Ms. ${order.first_name} ${order.last_name}.</h2><br/><strong>Thank you for your purchase! We have registered your order and we'll confirm the payment as soon as possible</strong>`,
+            html: `<h2>Dear Mr./Ms. ${order[0].first_name} ${order[0].last_name}.</h2><br/><strong>Thank you for your purchase! We have registered your order and we'll confirm the payment as soon as possible</strong>`,
         }
     
         await mail.send(msg);
