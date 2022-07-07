@@ -48,6 +48,7 @@ export default function Checkout(props) {
     // const [ discountError, setDiscountError ] = useState(false)
     const [discountDetails, setDiscount] = useState({})
     const [formErrors, setFormErrors] = useState([])
+    const [ isLoading, setIsLoading ] = useState(false)
 
     // useEffect(() => {
     //     console.log(pack)
@@ -157,11 +158,20 @@ export default function Checkout(props) {
     }
 
     const processOrder = async () => {
+        setIsLoading(true)
         const res = await fetch('/api/process-order', {
             method: 'POST',
             body: JSON.stringify(order)
         })
-        console.log(await res.json())
+        console.log(res)
+        if(res.ok){
+            const response = await res.json();
+            console.log(response)
+            window.open(response.DirectLinkIs)
+            
+        }
+        
+        setIsLoading(false)
     }
 
     const verifyDiscountCode = async () => {
@@ -442,7 +452,7 @@ export default function Checkout(props) {
                             <Center>
                                 <VStack>
                                     <Text as="b">Total to pay: {Number(order.details.total).toFixed(2)} €</Text>
-                                    <Button onClick={processOrder}>Submit</Button>
+                                    <Button onClick={processOrder} isLoading={isLoading} loadingText='Submitting'>Submit</Button>
                                 </VStack>
                             </Center>
                         </>
