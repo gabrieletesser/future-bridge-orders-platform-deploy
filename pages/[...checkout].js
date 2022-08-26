@@ -229,7 +229,7 @@ export default function Checkout(props) {
                 <VStack pb={10}>
                     <Box>
                         <Center>
-                            <Image src={logo.source_url} alt={site.name} maxWidth={["100%","50%"]}/>
+                            <Image src={logo.source_url} alt={site.name} maxWidth={["100%","50%"]} bgColor={'brand.900'}/>
                         </Center>
                     </Box>
                     <Center><Text fontSize='3xl'>Selected package: {pack.title.rendered}</Text></Center>
@@ -401,7 +401,6 @@ export default function Checkout(props) {
                                 <Heading>Order Summary</Heading>
                                 <Text>Event: {site.name}</Text>
                                 <Text>Package: {pack.title.rendered}</Text>
-                                <Text>Package price: {pack.price} €</Text>
                                 <Divider />
                                 <Text as="b">Primary Contact</Text>
                                 <Text>{order.details.first_name} {order.details.last_name}</Text>

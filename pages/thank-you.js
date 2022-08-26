@@ -14,7 +14,7 @@ export default function ThankYou(){
             <VStack>
             <Heading id="confetti">Thank you for your purchase!</Heading>
             <Text fontSize='xl'> We have sent you a recap email!</Text>
-            <Text fontSize='sm'>Pssst! Check the spam if you cannot find it in your inbox!</Text>
+            <Text fontSize='sm'>TIP! Check the spam folder if you cannot find it in your inbox!!</Text>
             </VStack>
         </Center>
     )
