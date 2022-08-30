@@ -407,7 +407,7 @@ export default function Checkout(props) {
                                 <Text>{order.details.email}</Text>
                                 <Text as="b">Company</Text>
                                 <Text>{order.details.official_company_name} - {order.details.billing_address} - {order.details.country} - {order.details.company_registration_number}</Text>
-                                <Text as="b">Participants</Text>
+                                <Text as="b">Participants (other than the Primary Contact)</Text>
                                 {
                                     participants.length == 0 ? <Text>No people added.</Text> : <></>
                                 }
